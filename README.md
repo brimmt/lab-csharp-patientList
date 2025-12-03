@@ -1,7 +1,7 @@
 # PatientAPI (C# ASP.NET Web API)
 
 A simple practice API built to learn controllers, services, dependency injection, and Swagger in .NET 8.
-![Swagger Preview](patientAPI/image.png)
+![Swagger Preview](image.png)
 
 ## Endpoints:
 GET /api/patients  
