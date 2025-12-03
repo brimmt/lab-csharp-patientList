@@ -33,3 +33,4 @@ C:\Users\brimm\PatientAPI\patientAPI\obj\Debug\net9.0\refint\patientAPI.dll
 C:\Users\brimm\PatientAPI\patientAPI\obj\Debug\net9.0\patientAPI.pdb
 C:\Users\brimm\PatientAPI\patientAPI\obj\Debug\net9.0\patientAPI.genruntimeconfig.cache
 C:\Users\brimm\PatientAPI\patientAPI\obj\Debug\net9.0\ref\patientAPI.dll
+C:\Users\brimm\PatientAPI\patientAPI\obj\Debug\net9.0\patientAPI.sourcelink.json

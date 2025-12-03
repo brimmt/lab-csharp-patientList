@@ -27,5 +27,30 @@ namespace patientAPI.Services   // folder-level grouping
             _patients.Add(patient);
             return patient;
         }
+
+        public Patient Update(Patient patient)
+        {
+            var existing = GetById(patient.Id);
+            if (existing is null)
+            {
+                return null;
+            }
+
+            existing.Name = patient.Name;
+            existing.Age = patient.Age;
+            existing.Gender = patient.Gender;
+            return existing;
+        }
+
+        public bool Delete(int id)
+        {
+            var patient = GetById(id);  // Reuses service logic from GetById to find the patient to delete
+            if (patient != null)
+            {
+                _patients.Remove(patient);
+                return true;
+            }
+            return false;
+        }
     }
 }

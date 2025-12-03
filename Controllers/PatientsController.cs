@@ -42,6 +42,32 @@ namespace patientAPI.Controllers
             var created = _service.Add(patient);
             return CreatedAtAction(nameof(GetById), new { id = created.Id}, created);
         }
+        
+        
+        // PUT /api/patients/id
+        [HttpPut("{id:int}")]
+        public ActionResult<Patient> Update(int id, Patient patient)
+        {
+            if (id != patient.Id)
+                return BadRequest();
+
+            var updated = _service.Update(patient);
+            if (updated is null)
+                return NotFound();
+            return Ok(updated);
+        }
+
+
+
+        // Delete /api/patients/id
+        [HttpDelete("{id:int}")]
+        public ActionResult<Patient> Delete(int id)
+        {
+            var deleted = _service.Delete(id);
+            if (!deleted)
+                return NotFound();
+            return NoContent();
+        }
 
     }
 }
