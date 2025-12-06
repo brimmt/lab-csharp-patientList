@@ -1,6 +1,15 @@
 using patientAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader());
+});
+
+
 
 // Add services
 builder.Services.AddControllers();
@@ -13,6 +22,7 @@ builder.Services.AddSwaggerGen(c => {
 });
 
 var app = builder.Build();
+app.UseCors("AllowAll");
 
 // Enable Swagger only in development
 if (app.Environment.IsDevelopment())
